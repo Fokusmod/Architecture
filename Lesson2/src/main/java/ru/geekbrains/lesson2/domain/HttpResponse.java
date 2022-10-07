@@ -13,46 +13,23 @@ public class HttpResponse {
     private String body;
 
 
-    public HttpResponse(String version, String statusCode, Map<String, String> headers, String body) {
-        this.version = version;
-        this.statusCode = statusCode;
-        this.headers = headers;
-        this.body = body;
-    }
-
-    public HttpResponse() {
-    }
-
-    public String getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(String statusCode) {
-        this.statusCode = statusCode;
-    }
-
-    public Map<String, String> getHeaders() {
-        return headers;
-    }
-
-    public void setHeaders(Map<String, String> headers) {
-        this.headers = headers;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
+    private HttpResponse() {
     }
 
     public String getVersion() {
         return version;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public String getStatusCode() {
+        return statusCode;
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
+
+    public String getBody() {
+        return body;
     }
 
     @Override
@@ -63,5 +40,43 @@ public class HttpResponse {
                 ", headers=" + headers +
                 ", body='" + body + '\'' +
                 '}';
+    }
+
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder {
+
+        private HttpResponse httpResponse;
+
+        private Builder() {
+            this.httpResponse = new HttpResponse();
+        }
+
+        public Builder version(String version){
+            this.httpResponse.version = version;
+            return this;
+        }
+
+        public Builder statusCode(String statusCode){
+            this.httpResponse.statusCode = statusCode;
+            return this;
+        }
+
+        public Builder headers(Map<String,String> headers){
+            this.httpResponse.headers = headers;
+            return this;
+        }
+
+        public Builder body(String body){
+            this.httpResponse.body = body;
+            return this;
+        }
+
+        public HttpResponse build(){
+            return this.httpResponse;
+        }
+
     }
 }

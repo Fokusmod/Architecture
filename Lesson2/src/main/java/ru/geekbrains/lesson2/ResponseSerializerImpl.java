@@ -17,7 +17,6 @@ public class ResponseSerializerImpl implements ResponseSerializer {
             stringBuilder.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
         }
         stringBuilder.append("\n");
-
         return stringBuilder.toString();
     }
 

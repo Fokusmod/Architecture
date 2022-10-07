@@ -6,7 +6,6 @@ import ru.geekbrains.lesson2.domain.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,18 +13,18 @@ public class FileService {
 
     public HttpResponse getResponse(String rootUrl, String contentUrl) {
         if (!existFile(rootUrl, contentUrl)) {
-            HttpResponse httpResponse = new HttpResponse();
-            httpResponse.setVersion("HTTP/1.1");
-            httpResponse.setStatusCode("404 NOT_FOUND");
-            httpResponse.setHeaders(new HashMap<>(Map.of("Content-Type", "text/html; charset=utf-8")));
-            httpResponse.setBody("<h1>Файл не найден!</h1>");
-            return httpResponse;
+            return HttpResponse.builder()
+                    .version("HTTP/1.1")
+                    .statusCode("404 NOT_FOUND")
+                    .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
+                    .body("<h1>Файл не найден!</h1>")
+                    .build();
         }
-        HttpResponse httpResponse = new HttpResponse();
-        httpResponse.setVersion("HTTP/1.1");
-        httpResponse.setStatusCode("200 OK");
-        httpResponse.setHeaders(new HashMap<>(Map.of("Content-Type", "text/html; charset=utf-8")));
-        return httpResponse;
+        return HttpResponse.builder()
+                .version("HTTP/1.1")
+                .statusCode("200 OK")
+                .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
+                .build();
     }
 
 
