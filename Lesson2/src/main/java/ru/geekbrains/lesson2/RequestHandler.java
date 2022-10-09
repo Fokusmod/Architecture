@@ -33,7 +33,6 @@ public class RequestHandler implements Runnable {
 
         HttpResponse httpResponse = fileService.getResponse(WWW, httpRequest.getPath());
 
-
         ResponseSerializer responseSerializer = new ResponseSerializerImpl();
         String header = responseSerializer.serialize(httpResponse);
 
