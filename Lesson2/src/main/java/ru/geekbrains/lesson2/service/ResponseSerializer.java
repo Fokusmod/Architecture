@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2.service;
 
 import ru.geekbrains.lesson2.domain.HttpResponse;
 
