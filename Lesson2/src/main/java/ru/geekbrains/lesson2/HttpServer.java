@@ -2,15 +2,13 @@ package ru.geekbrains.lesson2;
 
 import ru.geekbrains.lesson2.logger.ConsoleLogger;
 import ru.geekbrains.lesson2.logger.Logger;
-import ru.geekbrains.lesson2.service.RequestHandlerFactory;
-import ru.geekbrains.lesson2.service.SocketServiceFactory;
+import ru.geekbrains.lesson2.service.request_handler.RequestHandlerFactory;
+import ru.geekbrains.lesson2.service.socket_service.SocketServiceFactory;
 
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class HttpServer {
     private static final Logger logger = ConsoleLogger.getInstance();

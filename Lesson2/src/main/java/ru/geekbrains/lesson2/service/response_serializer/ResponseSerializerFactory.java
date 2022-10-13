@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2.service;
+package ru.geekbrains.lesson2.service.response_serializer;
 
 public class ResponseSerializerFactory {
 

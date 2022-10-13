@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2.service;
+package ru.geekbrains.lesson2.service.socket_service;
 
 import java.io.Closeable;
 import java.io.Reader;

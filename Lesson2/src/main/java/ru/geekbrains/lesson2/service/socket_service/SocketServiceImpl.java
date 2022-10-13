@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2.service;
+package ru.geekbrains.lesson2.service.socket_service;
 
 import ru.geekbrains.lesson2.logger.ConsoleLogger;
 import ru.geekbrains.lesson2.logger.Logger;

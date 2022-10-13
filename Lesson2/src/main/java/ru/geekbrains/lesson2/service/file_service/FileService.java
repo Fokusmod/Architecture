@@ -1,10 +1,10 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2.service.file_service;
 
 import ru.geekbrains.lesson2.domain.HttpRequest;
 import ru.geekbrains.lesson2.domain.HttpResponse;
 import ru.geekbrains.lesson2.domain.StatusCode;
-import ru.geekbrains.lesson2.service.RequestParser;
-import ru.geekbrains.lesson2.service.RequestParserFactory;
+import ru.geekbrains.lesson2.service.request_parser.RequestParser;
+import ru.geekbrains.lesson2.service.request_parser.RequestParserFactory;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

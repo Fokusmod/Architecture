@@ -1,10 +1,13 @@
-package ru.geekbrains.lesson2.service;
+package ru.geekbrains.lesson2.service.request_handler;
 
-import ru.geekbrains.lesson2.FileService;
 import ru.geekbrains.lesson2.domain.HttpRequest;
 import ru.geekbrains.lesson2.domain.HttpResponse;
 import ru.geekbrains.lesson2.logger.ConsoleLogger;
 import ru.geekbrains.lesson2.logger.Logger;
+import ru.geekbrains.lesson2.service.response_serializer.ResponseSerializer;
+import ru.geekbrains.lesson2.service.response_serializer.ResponseSerializerFactory;
+import ru.geekbrains.lesson2.service.socket_service.SocketService;
+import ru.geekbrains.lesson2.service.file_service.FileService;
 
 
 import java.io.*;
