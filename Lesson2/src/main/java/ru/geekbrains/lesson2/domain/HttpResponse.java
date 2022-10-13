@@ -6,7 +6,7 @@ public class HttpResponse {
 
     private String version;
 
-    private String statusCode;
+    private StatusCode statusCode;
 
     private Map<String, String> headers;
 
@@ -20,7 +20,7 @@ public class HttpResponse {
         return version;
     }
 
-    public String getStatusCode() {
+    public StatusCode getStatusCode() {
         return statusCode;
     }
 
@@ -48,7 +48,7 @@ public class HttpResponse {
 
     public static class Builder {
 
-        private HttpResponse httpResponse;
+        private final HttpResponse httpResponse;
 
         private Builder() {
             this.httpResponse = new HttpResponse();
@@ -59,7 +59,7 @@ public class HttpResponse {
             return this;
         }
 
-        public Builder statusCode(String statusCode){
+        public Builder statusCode(StatusCode statusCode){
             this.httpResponse.statusCode = statusCode;
             return this;
         }

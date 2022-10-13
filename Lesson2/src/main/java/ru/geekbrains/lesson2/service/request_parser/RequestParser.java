@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2.service.request_parser;
 
 import ru.geekbrains.lesson2.domain.HttpRequest;
 
