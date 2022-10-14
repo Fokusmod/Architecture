@@ -4,8 +4,6 @@ import ru.geekbrains.lesson2.domain.HttpRequest;
 import ru.geekbrains.lesson2.logger.ConsoleLogger;
 import ru.geekbrains.lesson2.logger.Logger;
 import ru.geekbrains.lesson2.service.request_parser.RequestParser;
-import ru.geekbrains.lesson2.service.response_serializer.ResponseSerializer;
-import ru.geekbrains.lesson2.service.response_serializer.ResponseSerializerFactory;
 import ru.geekbrains.lesson2.service.socket_service.SocketService;
 
 
@@ -22,7 +20,7 @@ class RequestHandlerImpl implements RequestHandler {
     public RequestHandlerImpl(SocketService socketService, RequestParser requestParser) {
         this.socketService = socketService;
         this.requestParser = requestParser;
-        this.methodHandler = MethodHandlerFactory.create(socketService);
+        this.methodHandler = AnnotationHandlerFactory.create(socketService);
 
     }
 

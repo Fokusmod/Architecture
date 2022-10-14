@@ -15,6 +15,9 @@ public class GetMethodHandler extends MethodHandler{
         super(method, next, socketService, responseSerializer);
     }
 
+    public GetMethodHandler() {
+    }
+
     @Override
     protected HttpResponse handleInternal(HttpRequest httpRequest) {
         return HttpResponse.builder()
@@ -23,4 +26,5 @@ public class GetMethodHandler extends MethodHandler{
                 .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
                 .build();
     }
+
 }
