@@ -14,10 +14,10 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public abstract class MethodHandler {
-    private final String method;
-    private final MethodHandler next;
-    private final SocketService socketService;
-    private final ResponseSerializer responseSerializer;
+    private String method;
+    private MethodHandler next;
+    private SocketService socketService;
+    private ResponseSerializer responseSerializer;
     private static final String WWW = "/Users/Fokusmod/Desktop/Architecture/Lesson2/123.txt";
 
     public MethodHandler(String method, MethodHandler next, SocketService socketService, ResponseSerializer responseSerializer) {
@@ -27,9 +27,12 @@ public abstract class MethodHandler {
         this.responseSerializer = responseSerializer;
     }
 
+    public MethodHandler() {
+    }
+
     public void handle(HttpRequest httpRequest) {
         HttpResponse httpResponse = checkFile(WWW, httpRequest.getPath());
-        if (httpResponse!= null){
+        if (httpResponse != null) {
             writeResponse(httpResponse, responseSerializer);
             return;
         }
@@ -61,16 +64,24 @@ public abstract class MethodHandler {
 
     public HttpResponse checkFile(String rootUrl, String contentUrl) {
         Path path = Paths.get(rootUrl, contentUrl);
-        if(!Files.exists(path)){
+        if (!Files.exists(path)) {
             return HttpResponse.builder()
-                .version("HTTP/1.1")
-                .statusCode(StatusCode.NOT_FOUND)
-                .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
-                .body("<h1>Файл не найден!</h1>")
-                .build();
+                    .version("HTTP/1.1")
+                    .statusCode(StatusCode.NOT_FOUND)
+                    .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
+                    .body("<h1>Файл не найден!</h1>")
+                    .build();
         }
         return null;
     }
 
-
+    @Override
+    public String toString() {
+        return "MethodHandler{" +
+                "method='" + method + '\'' +
+                ", next=" + next +
+                ", socketService=" + socketService +
+                ", responseSerializer=" + responseSerializer +
+                '}';
+    }
 }

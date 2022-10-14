@@ -10,6 +10,8 @@ import java.util.Map;
 @Handler(handlerOrder = 2)
 public class PostMethodHandler extends MethodHandler{
 
+    public PostMethodHandler() {
+    }
 
     public PostMethodHandler(String method, MethodHandler next, SocketService socketService, ResponseSerializer responseSerializer) {
         super(method, next, socketService, responseSerializer);
