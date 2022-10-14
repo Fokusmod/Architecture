@@ -22,21 +22,21 @@ public class FileService {
     }
 
 
-    public HttpResponse getResponse(String rootUrl, String contentUrl) {
-        if (!existFile(rootUrl, contentUrl)) {
-            return HttpResponse.builder()
-                    .version("HTTP/1.1")
-                    .statusCode(StatusCode.NOT_FOUND)
-                    .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
-                    .body("<h1>Файл не найден!</h1>")
-                    .build();
-        }
-        return HttpResponse.builder()
-                .version("HTTP/1.1")
-                .statusCode(StatusCode.OK)
-                .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
-                .build();
-    }
+//    public HttpResponse getResponse(String rootUrl, String contentUrl) {
+//        if (!existFile(rootUrl, contentUrl)) {
+//            return HttpResponse.builder()
+//                    .version("HTTP/1.1")
+//                    .statusCode(StatusCode.NOT_FOUND)
+//                    .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
+//                    .body("<h1>Файл не найден!</h1>")
+//                    .build();
+//        }
+//        return HttpResponse.builder()
+//                .version("HTTP/1.1")
+//                .statusCode(StatusCode.OK)
+//                .headers(Map.of("Content-Type", "text/html; charset=utf-8"))
+//                .build();
+//    }
 
 
     public HttpRequest getRequest(List<String> request) {

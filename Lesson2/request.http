@@ -1,0 +1,6 @@
+GET http://localhost:8088/
+
+####
+
+POST http://localhost:8088/
+
