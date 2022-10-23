@@ -10,6 +10,7 @@
     <modules>
         <module>Lesson1</module>
         <module>Lesson2</module>
+        <module>MVC_Pattern</module>
     </modules>
     <packaging>pom</packaging>
 
