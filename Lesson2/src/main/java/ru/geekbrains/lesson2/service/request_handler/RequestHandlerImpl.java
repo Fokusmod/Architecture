@@ -9,8 +9,6 @@ import ru.geekbrains.lesson2.service.socket_service.SocketService;
 
 
 class RequestHandlerImpl implements RequestHandler {
-
-    private static final String WWW = "/Users/Fokusmod/Desktop/Architecture/Lesson2/123.txt";
     private static final Logger logger = ConsoleLogger.getInstance();
     private final SocketService socketService;
     private final RequestParser requestParser;
